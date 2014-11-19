@@ -1,0 +1,14 @@
+Here lie the programming files for the UCD9248 power controllers on the SNAP board.
+
+.xml files are project files for the Texas Instruments Fusion software.
+.hex files are binaries ready to be written to the UCD9248 PROMs.
+.csv files are lists of PMBUS commands which can regenerate the configurations.
+
+To load the .hex files, start the Fusion Design software. If you have connected to a SNAP board with a TI GPIOUSB cable, the software should automatically find the devices at addresses d52 and d53.
+
+Select a rail belonging to the d52 chip. Select File->import->Data Flash, to load the d52 hex file. Repeat for the chip at d53.
+
+Power cycle the board to allow the power supplies to come up in the correct order.
+
+If all is well, a SNAP board with idle FPGA should draw about 0.8A at the 12V input (0.9A if a Raspberry Pi is also being powered).
+

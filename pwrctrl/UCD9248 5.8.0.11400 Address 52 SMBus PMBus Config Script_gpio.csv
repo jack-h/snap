@@ -1,0 +1,804 @@
+Comment,Format=CSV; Hex=CoderUpper; BreakOutBytes=False; PEC=True; IncludeBlockLength=True [DO NOT REMOVE THIS LINE IF YOU WANT TO IMPORT USING A FUSION TOOL]
+Comment,"PEC byte is calculated on all message bytes, including addresses and Read/Write bit."
+Comment,"SMBus Fields are Request,Address,Command,Data with PEC byte"
+Comment,"For reads, the last field is what is expected back from the device"
+Comment,Creator: Texas Instruments Fusion Digital Power Designer v1.9.78
+Comment,"Date: Wednesday, November 19, 2014"
+Comment,Exported from UCD9248 - Firmware: 5.8.0.11400
+Comment,Write PHASE_INFO [MFR 02] Rail #1: 1 Phase: 1A; Rail #2: 1 Phase: 2A; Rail #3: 1 Phase: 3A; Rail #4: 1 Phase: 4A
+BlockWrite,0x34,0xD2,0x0401041040FA
+BlockRead,0x34,0xD2,0x0401041040
+Comment,"Write GPIO_SEQ_CONFIG [MFR 35] Input Pins: Pin 52 SRE-3B ActiveHigh Input,Pin 50 SRE-4B ActiveHigh Input | Output Pins: Pin 11 SRE-1B ActiveHigh ActivelyDrivenOutput Regulating Rail #1,Pin 37 SRE-2B ActiveHigh ActivelyDrivenOutput Regulating Rail #1,2,Pin 49 PGOOD ActiveHigh ActivelyDrivenOutput POWER_GOOD | Turn On Dep: Rail #2: Rails:1, Pins:52; Rail #3: Rails:2, Pins:<None>; Rail #4: Rails:<None>, Pins:50 | Stay On Dep: Rail #1: Rails:<None>, Pins:52; Rail #2: Rails:3, Pins:<None>; Rail #3: Rails:<None>, Pins:50 | Stay On Shutdown Modes: Rail #1: Soft Off, Rail #2: Soft Off, Rail #3: Soft Off, Rail #4: Soft Off | Fault Slaves: <None> | Seq Timeout Pin: 52"
+BlockWrite,0x34,0xF3,0x1E0011200201400200111320000000ADBD00008E9EC600000000000000000095
+BlockRead,0x34,0xF3,0x1E0011200201400200111320000000ADBD00008E9EC6000000000000000000
+Comment,Write FREQUENCY_SWITCH [Rail #1] 500.0 kHz
+WriteByte,0x34,0x00,0x0094
+ReadByte,0x34,0x00,0x00
+WriteWord,0x34,0x33,0xE8FBBD
+ReadWord,0x34,0x33,0xE8FB
+Comment,"Write SYNC_OFFSET [MFR 43,Rail #1] 0 ns"
+WriteWord,0x34,0xFB,0x000065
+ReadWord,0x34,0xFB,0x0000
+Comment,Write FREQUENCY_SWITCH [Rail #2] 751.0 kHz
+WriteByte,0x34,0x00,0x0193
+ReadByte,0x34,0x00,0x01
+WriteWord,0x34,0x33,0xEF0237
+ReadWord,0x34,0x33,0xEF02
+Comment,"Write SYNC_OFFSET [MFR 43,Rail #2] 0 ns"
+WriteWord,0x34,0xFB,0x000065
+ReadWord,0x34,0xFB,0x0000
+Comment,Write FREQUENCY_SWITCH [Rail #3] 751.0 kHz
+WriteByte,0x34,0x00,0x029A
+ReadByte,0x34,0x00,0x02
+WriteWord,0x34,0x33,0xEF0237
+ReadWord,0x34,0x33,0xEF02
+Comment,"Write SYNC_OFFSET [MFR 43,Rail #3] 0 ns"
+WriteWord,0x34,0xFB,0x000065
+ReadWord,0x34,0xFB,0x0000
+Comment,Write FREQUENCY_SWITCH [Rail #4] 500.0 kHz
+WriteByte,0x34,0x00,0x039D
+ReadByte,0x34,0x00,0x03
+WriteWord,0x34,0x33,0xE8FBBD
+ReadWord,0x34,0x33,0xE8FB
+Comment,"Write SYNC_OFFSET [MFR 43,Rail #4] 0 ns"
+WriteWord,0x34,0xFB,0x000065
+ReadWord,0x34,0xFB,0x0000
+Comment,Execute STORE_DEFAULT_ALL
+SendByte,0x34,0x11
+Pause,1000,"Pausing 1,000.00 ms for STORE_DEFAULT_ALL hold time"
+Comment,Execute SOFT_RESET [MFR 11]
+SendByte,0x34,0xDB
+Pause,2000,"Pausing 2,000.00 ms for Reset device and wait for it to come back online"
+Comment,Write IIN_SCALE_MONITOR [MFR 12] 0.000 ohm
+WriteWord,0x34,0xDC,0x0080B9
+ReadWord,0x34,0xDC,0x0080
+Comment,Write MFR_DATE YYMMDD
+BlockWrite,0x34,0x9D,0x0659594D4D4444FC
+BlockRead,0x34,0x9D,0x0659594D4D4444
+Comment,Write MFR_ID MFR_ID
+BlockWrite,0x34,0x99,0x064D46525F4944A0
+BlockRead,0x34,0x99,0x064D46525F4944
+Comment,Write MFR_LOCATION MFR_LOCATION
+BlockWrite,0x34,0x9C,0x0C4D46525F4C4F434154494F4E25
+BlockRead,0x34,0x9C,0x0C4D46525F4C4F434154494F4E
+Comment,Write MFR_MODEL MFR_MODE
+BlockWrite,0x34,0x9A,0x084D46525F4D4F444517
+BlockRead,0x34,0x9A,0x084D46525F4D4F4445
+Comment,Write MFR_REVISION MFR_REVISION
+BlockWrite,0x34,0x9B,0x0C4D46525F5245564953494F4E6E
+BlockRead,0x34,0x9B,0x0C4D46525F5245564953494F4E
+Comment,Write MFR_SERIAL 000000
+BlockWrite,0x34,0x9E,0x06303030303030B2
+BlockRead,0x34,0x9E,0x06303030303030
+Comment,Write SECURITY_BIT_MASK [MFR 36] No commands write protected
+BlockWrite,0x34,0xF4,0x200000000000000000000000000000000000000000000000000000000000000000D0
+BlockRead,0x34,0xF4,0x200000000000000000000000000000000000000000000000000000000000000000
+Comment,Write SYNC_IN_OUT [MFR 17] No Slaves; Master: None
+WriteWord,0x34,0xE1,0x00FFB3
+ReadWord,0x34,0xE1,0x00FF
+Comment,Write USER_DATA_00 User_Data_00
+BlockWrite,0x34,0xB0,0x0C557365725F446174615F3030A1
+BlockRead,0x34,0xB0,0x0C557365725F446174615F3030
+Comment,Write VIN_OFF 5.000 V
+WriteWord,0x34,0x36,0x80CAB7
+ReadWord,0x34,0x36,0x80CA
+Comment,Write VIN_ON 6.000 V
+WriteWord,0x34,0x35,0x00CBBB
+ReadWord,0x34,0x35,0x00CB
+Comment,Write VIN_OV_FAULT_LIMIT 16.500 V
+WriteWord,0x34,0x55,0x10DA5E
+ReadWord,0x34,0x55,0x10DA
+Comment,"Write VIN_OV_FAULT_RESPONSE Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x56,0x806F
+ReadByte,0x34,0x56,0x80
+Comment,Write VIN_OV_WARN_LIMIT 15.000 V
+WriteWord,0x34,0x57,0xC0D30D
+ReadWord,0x34,0x57,0xC0D3
+Comment,Write VIN_SCALE [MFR 03] 0.148 
+WriteWord,0x34,0xD3,0x5EA2CA
+ReadWord,0x34,0xD3,0x5EA2
+Comment,Write VIN_UV_FAULT_LIMIT 0.000 V
+WriteWord,0x34,0x59,0x008072
+ReadWord,0x34,0x59,0x0080
+Comment,"Write VIN_UV_FAULT_RESPONSE Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x5A,0x001A
+ReadByte,0x34,0x5A,0x00
+Comment,Write VIN_UV_WARN_LIMIT 7.797 V
+WriteWord,0x34,0x58,0xE6CBD2
+ReadWord,0x34,0x58,0xE6CB
+Comment,Write VOUT_MAX [Rail #1] 1.600 V
+WriteByte,0x34,0x00,0x0094
+ReadByte,0x34,0x00,0x00
+WriteWord,0x34,0x24,0x99191E
+ReadWord,0x34,0x24,0x9919
+Comment,Write ON_OFF_CONFIG [Rail #1] Mode: Always Converting
+WriteByte,0x34,0x02,0x02B0
+ReadByte,0x34,0x02,0x02
+Comment,"Write CLA_GAINS_BANK_0 [META,Rail #1] B1=[1.76563 -2.97656 1.22852] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x007A
+ReadByte,0x34,0xD4,0x00
+BlockWrite,0x34,0xD5,0x1803880A0C0275000202750F8B000000008410410404033C3B1C
+BlockRead,0x34,0xD5,0x1803880A0C0275000202750F8B000000008410410404033C3B
+Comment,"Write CLA_GAINS_BANK_1 [META,Rail #1] B1=[1.76563 -2.97656 1.22852] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[2.00,1.75,1.00,1.75,2.00]"
+WriteByte,0x34,0xD4,0x017D
+ReadByte,0x34,0xD4,0x01
+BlockWrite,0x34,0xD5,0x1803880A0C0275000202750F8B00000000841C81C804033C3BD0
+BlockRead,0x34,0xD5,0x1803880A0C0275000202750F8B00000000841C81C804033C3B
+Comment,"Write CLA_GAINS_BANK_2 [META,Rail #1] B1=[0.00000 0.00000 0.00000] A1=[1.00000 -1.00000 0.00000] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=1 Limits=[-5.00,-3.00,3.00,5.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x0274
+ReadByte,0x34,0xD4,0x02
+BlockWrite,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B33
+BlockRead,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B
+Comment,"Write DRIVER_CONFIG [MFR 06,Rail #1] DPWM Shutdown Action: DriveLow, Fault Pin On Restart Mode: IgnoreFaultPin, Interrupt Pin Polarity: ActiveHigh"
+WriteByte,0x34,0xD6,0x0050
+ReadByte,0x34,0xD6,0x00
+Comment,"Write DRIVER_MIN_PULSE [MFR 15,Rail #1] 140 ns"
+WriteWord,0x34,0xDF,0x30F2A4
+ReadWord,0x34,0xDF,0x30F2
+Comment,"Write EADC_SAMPLE_TRIGGER [MFR 07,Rail #1] 224 ns"
+WriteWord,0x34,0xD7,0x80F3BD
+ReadWord,0x34,0xD7,0x80F3
+Comment,"Write FAST_OC_FAULT_LIMIT [MFR 39,Rail #1] 30.000 A/Phase"
+WriteWord,0x34,0xF7,0xC0DB7D
+ReadWord,0x34,0xF7,0xC0DB
+Comment,Write IOUT_OC_FAULT_LIMIT [Rail #1] 26.000 A
+WriteWord,0x34,0x46,0x40DB4A
+ReadWord,0x34,0x46,0x40DB
+Comment,"Write IOUT_OC_FAULT_RESPONSE [Rail #1] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x47,0x802D
+ReadByte,0x34,0x47,0x80
+Comment,Write IOUT_OC_LV_FAULT_LIMIT [Rail #1] 0.880 V
+WriteWord,0x34,0x48,0x140E1B
+ReadWord,0x34,0x48,0x140E
+Comment,"Write IOUT_OC_LV_FAULT_RESPONSE [Rail #1] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x49,0x80FB
+ReadByte,0x34,0x49,0x80
+Comment,Write IOUT_OC_WARN_LIMIT [Rail #1] 21.000 A
+WriteWord,0x34,0x4A,0xA0DAF4
+ReadWord,0x34,0x4A,0xA0DA
+Comment,Write IOUT_UC_FAULT_LIMIT [Rail #1] -6.594 A
+WriteWord,0x34,0x4B,0xB4CCFE
+ReadWord,0x34,0x4B,0xB4CC
+Comment,"Write IOUT_UC_FAULT_RESPONSE [Rail #1] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x4C,0x0033
+ReadByte,0x34,0x4C,0x00
+Comment,"Write LIGHT_LOAD_CONFIG [MFR 29,Rail #1] CLA Gain Control: NormalLoad; Phase Control: NormalLoad; Num Light Load Phases: 1"
+WriteByte,0x34,0xED,0x003E
+ReadByte,0x34,0xED,0x00
+Comment,"Write LIGHT_LOAD_LIMIT_HIGH [MFR 27,Rail #1] 0.000 A"
+WriteWord,0x34,0xEB,0x00804E
+ReadWord,0x34,0xEB,0x0080
+Comment,"Write LIGHT_LOAD_LIMIT_LOW [MFR 38,Rail #1] 0.000 A"
+WriteWord,0x34,0xF6,0x00807D
+ReadWord,0x34,0xF6,0x0080
+Comment,Write OT_FAULT_LIMIT [Rail #1] 80 C
+WriteWord,0x34,0x4F,0x80EA0A
+ReadWord,0x34,0x4F,0x80EA
+Comment,"Write OT_FAULT_RESPONSE [Rail #1] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x50,0x0098
+ReadByte,0x34,0x50,0x00
+Comment,Write OT_WARN_LIMIT [Rail #1] 77 C
+WriteWord,0x34,0x51,0x68EA6F
+ReadWord,0x34,0x51,0x68EA
+Comment,"Write PHASE_DROP_CAL [MFR 42,Rail #1] 1.000 "
+WriteWord,0x34,0xFA,0x00BA21
+ReadWord,0x34,0xFA,0x00BA
+Comment,Write POWER_GOOD_OFF [Rail #1] 0.860 V
+WriteWord,0x34,0x5F,0xC30D77
+ReadWord,0x34,0x5F,0xC30D
+Comment,Write POWER_GOOD_ON [Rail #1] 0.900 V
+WriteWord,0x34,0x5E,0x660E4C
+ReadWord,0x34,0x5E,0x660E
+Comment,"Write SEQ_TIMEOUT [MFR 00,Rail #1] 0.0 ms"
+WriteWord,0x34,0xD0,0x008043
+ReadWord,0x34,0xD0,0x0080
+Comment,"Write TEMP_BALANCE_IMIN [MFR 37,Rail #1] 511.50 A"
+WriteWord,0x34,0xF5,0xFFFB71
+ReadWord,0x34,0xF5,0xFFFB
+Comment,"Write THERMAL_COEFF [MFR 13,Rail #1] 0.394 %/C"
+WriteWord,0x34,0xDD,0x27ABC6
+ReadWord,0x34,0xDD,0x27AB
+Comment,Write TOFF_DELAY [Rail #1] 5.0 ms
+WriteWord,0x34,0x64,0x80CA45
+ReadWord,0x34,0x64,0x80CA
+Comment,Write TOFF_FALL [Rail #1] 4.0 ms
+WriteWord,0x34,0x65,0xFFC370
+ReadWord,0x34,0x65,0xFFC3
+Comment,Write TOFF_MAX_WARN_LIMIT [Rail #1] <No Limit>
+WriteWord,0x34,0x66,0xFF7FF0
+ReadWord,0x34,0x66,0xFF7F
+Comment,Write TON_DELAY [Rail #1] 0.0 ms
+WriteWord,0x34,0x60,0x0080A9
+ReadWord,0x34,0x60,0x0080
+Comment,Write TON_MAX_FAULT_LIMIT [Rail #1] 20.0 ms
+WriteWord,0x34,0x62,0x80DA48
+ReadWord,0x34,0x62,0x80DA
+Comment,"Write TON_MAX_FAULT_RESPONSE [Rail #1] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x63,0x005E
+ReadByte,0x34,0x63,0x00
+Comment,Write TON_RISE [Rail #1] 4.0 ms
+WriteWord,0x34,0x61,0xFFC3DB
+ReadWord,0x34,0x61,0xFFC3
+Comment,"Write TRACKING_MODE [MFR 22,Rail #1] Off"
+WriteByte,0x34,0xE6,0xFF5A
+ReadByte,0x34,0xE6,0xFF
+Comment,"Write TRACKING_SCALE_MONITOR [MFR 23,Rail #1] 1.000 "
+WriteWord,0x34,0xE7,0x00BA12
+ReadWord,0x34,0xE7,0x00BA
+Comment,"Write VOUT_CAL_MONITOR [MFR 01,Rail #1] 0.000 V"
+WriteWord,0x34,0xD1,0x0000A1
+ReadWord,0x34,0xD1,0x0000
+Comment,Write VOUT_CAL_OFFSET [Rail #1] 0.000 V
+WriteWord,0x34,0x23,0x00001B
+ReadWord,0x34,0x23,0x0000
+Comment,Write VOUT_COMMAND [Rail #1] 1.000 V
+WriteWord,0x34,0x21,0x0010BD
+ReadWord,0x34,0x21,0x0010
+Comment,Write VOUT_MARGIN_HIGH [Rail #1] 1.060 V
+WriteWord,0x34,0x25,0xF6107C
+ReadWord,0x34,0x25,0xF610
+Comment,Write VOUT_MARGIN_LOW [Rail #1] 0.960 V
+WriteWord,0x34,0x26,0x5C0F06
+ReadWord,0x34,0x26,0x5C0F
+Comment,Write VOUT_OV_FAULT_LIMIT [Rail #1] 1.140 V
+WriteWord,0x34,0x40,0x3D120D
+ReadWord,0x34,0x40,0x3D12
+Comment,"Write VOUT_OV_FAULT_RESPONSE [Rail #1] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x41,0x8053
+ReadByte,0x34,0x41,0x80
+Comment,Write VOUT_OV_WARN_LIMIT [Rail #1] 1.100 V
+WriteWord,0x34,0x42,0x9A11A1
+ReadWord,0x34,0x42,0x9A11
+Comment,Write VOUT_SCALE_LOOP [Rail #1] 1.000 
+WriteWord,0x34,0x29,0x00BAB3
+ReadWord,0x34,0x29,0x00BA
+Comment,Write VOUT_SCALE_MONITOR [Rail #1] 1.000 
+WriteWord,0x34,0x2A,0x00BA0E
+ReadWord,0x34,0x2A,0x00BA
+Comment,Write VOUT_TRANSITION_RATE [Rail #1] 0.250 mV/us
+WriteWord,0x34,0x27,0x01AAFA
+ReadWord,0x34,0x27,0x01AA
+Comment,Write VOUT_UV_FAULT_LIMIT [Rail #1] 0.060 V
+WriteWord,0x34,0x44,0xF600A2
+ReadWord,0x34,0x44,0xF600
+Comment,"Write VOUT_UV_FAULT_RESPONSE [Rail #1] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x45,0x008E
+ReadByte,0x34,0x45,0x00
+Comment,Write VOUT_UV_WARN_LIMIT [Rail #1] 0.020 V
+WriteWord,0x34,0x43,0x5200F8
+ReadWord,0x34,0x43,0x5200
+Comment,Write IOUT_CAL_GAIN_1 [Rail #1] 70.6 mohm
+WriteWord,0x34,0x38,0x35EA75
+ReadWord,0x34,0x38,0x35EA
+Comment,Write IOUT_CAL_OFFSET_1 [Rail #1] -8.500000 A
+WriteWord,0x34,0x39,0xE0D558
+ReadWord,0x34,0x39,0xE0D5
+Comment,"Write TEMPERATURE_CAL_GAIN_1 [MFR 20,Rail #1] 100.0 C/V"
+WriteWord,0x34,0xE4,0x20EBB1
+ReadWord,0x34,0xE4,0x20EB
+Comment,"Write TEMPERATURE_CAL_OFFSET_1 [MFR 21,Rail #1] -50.00 C"
+WriteWord,0x34,0xE5,0xE0E41A
+ReadWord,0x34,0xE5,0xE0E4
+Comment,Write VOUT_MAX [Rail #2] 3.633 V
+WriteByte,0x34,0x00,0x0193
+ReadByte,0x34,0x00,0x01
+WriteWord,0x34,0x24,0x213A10
+ReadWord,0x34,0x24,0x213A
+Comment,Write ON_OFF_CONFIG [Rail #2] Mode: Always Converting
+WriteByte,0x34,0x02,0x02B0
+ReadByte,0x34,0x02,0x02
+Comment,"Write CLA_GAINS_BANK_0 [META,Rail #2] B1=[1.84570 -3.28516 1.45117] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x007A
+ReadByte,0x34,0xD4,0x00
+BlockWrite,0x34,0xD5,0x1803B1096E02E7000202750F8B000000008410410404033C3B4A
+BlockRead,0x34,0xD5,0x1803B1096E02E7000202750F8B000000008410410404033C3B
+Comment,"Write CLA_GAINS_BANK_1 [META,Rail #2] B1=[1.84570 -3.28516 1.45117] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[2.00,1.75,1.00,1.75,2.00]"
+WriteByte,0x34,0xD4,0x017D
+ReadByte,0x34,0xD4,0x01
+BlockWrite,0x34,0xD5,0x1803B1096E02E7000202750F8B00000000841C81C804033C3B86
+BlockRead,0x34,0xD5,0x1803B1096E02E7000202750F8B00000000841C81C804033C3B
+Comment,"Write CLA_GAINS_BANK_2 [META,Rail #2] B1=[0.00000 0.00000 0.00000] A1=[1.00000 -1.00000 0.00000] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=1 Limits=[-5.00,-3.00,3.00,5.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x0274
+ReadByte,0x34,0xD4,0x02
+BlockWrite,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B33
+BlockRead,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B
+Comment,"Write DRIVER_CONFIG [MFR 06,Rail #2] DPWM Shutdown Action: DriveLow, Fault Pin On Restart Mode: IgnoreFaultPin, Interrupt Pin Polarity: ActiveHigh"
+WriteByte,0x34,0xD6,0x0050
+ReadByte,0x34,0xD6,0x00
+Comment,"Write DRIVER_MIN_PULSE [MFR 15,Rail #2] 20 ns"
+WriteWord,0x34,0xDF,0x80DA33
+ReadWord,0x34,0xDF,0x80DA
+Comment,"Write EADC_SAMPLE_TRIGGER [MFR 07,Rail #2] 228 ns"
+WriteWord,0x34,0xD7,0x90F3EA
+ReadWord,0x34,0xD7,0x90F3
+Comment,"Write FAST_OC_FAULT_LIMIT [MFR 39,Rail #2] 15.000 A/Phase"
+WriteWord,0x34,0xF7,0xC0D345
+ReadWord,0x34,0xF7,0xC0D3
+Comment,Write IOUT_OC_FAULT_LIMIT [Rail #2] 13.000 A
+WriteWord,0x34,0x46,0x40D372
+ReadWord,0x34,0x46,0x40D3
+Comment,"Write IOUT_OC_FAULT_RESPONSE [Rail #2] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x47,0x802D
+ReadByte,0x34,0x47,0x80
+Comment,Write IOUT_OC_LV_FAULT_LIMIT [Rail #2] 1.566 V
+WriteWord,0x34,0x48,0x0E19AB
+ReadWord,0x34,0x48,0x0E19
+Comment,"Write IOUT_OC_LV_FAULT_RESPONSE [Rail #2] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x49,0x80FB
+ReadByte,0x34,0x49,0x80
+Comment,Write IOUT_OC_WARN_LIMIT [Rail #2] 10.500 A
+WriteWord,0x34,0x4A,0xA0D2CC
+ReadWord,0x34,0x4A,0xA0D2
+Comment,Write IOUT_UC_FAULT_LIMIT [Rail #2] -3.281 A
+WriteWord,0x34,0x4B,0xB8C43A
+ReadWord,0x34,0x4B,0xB8C4
+Comment,"Write IOUT_UC_FAULT_RESPONSE [Rail #2] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x4C,0x0033
+ReadByte,0x34,0x4C,0x00
+Comment,"Write LIGHT_LOAD_CONFIG [MFR 29,Rail #2] CLA Gain Control: NormalLoad; Phase Control: NormalLoad; Num Light Load Phases: 1"
+WriteByte,0x34,0xED,0x003E
+ReadByte,0x34,0xED,0x00
+Comment,"Write LIGHT_LOAD_LIMIT_HIGH [MFR 27,Rail #2] 0.000 A"
+WriteWord,0x34,0xEB,0x00804E
+ReadWord,0x34,0xEB,0x0080
+Comment,"Write LIGHT_LOAD_LIMIT_LOW [MFR 38,Rail #2] 0.000 A"
+WriteWord,0x34,0xF6,0x00807D
+ReadWord,0x34,0xF6,0x0080
+Comment,Write OT_FAULT_LIMIT [Rail #2] 80 C
+WriteWord,0x34,0x4F,0x80EA0A
+ReadWord,0x34,0x4F,0x80EA
+Comment,"Write OT_FAULT_RESPONSE [Rail #2] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x50,0x8011
+ReadByte,0x34,0x50,0x80
+Comment,Write OT_WARN_LIMIT [Rail #2] 77 C
+WriteWord,0x34,0x51,0x68EA6F
+ReadWord,0x34,0x51,0x68EA
+Comment,"Write PHASE_DROP_CAL [MFR 42,Rail #2] 1.000 "
+WriteWord,0x34,0xFA,0x00BA21
+ReadWord,0x34,0xFA,0x00BA
+Comment,Write POWER_GOOD_OFF [Rail #2] 1.530 V
+WriteWord,0x34,0x5F,0x7B18FB
+ReadWord,0x34,0x5F,0x7B18
+Comment,Write POWER_GOOD_ON [Rail #2] 1.620 V
+WriteWord,0x34,0x5E,0xEC191D
+ReadWord,0x34,0x5E,0xEC19
+Comment,"Write SEQ_TIMEOUT [MFR 00,Rail #2] 0.0 ms"
+WriteWord,0x34,0xD0,0x008043
+ReadWord,0x34,0xD0,0x0080
+Comment,"Write TEMP_BALANCE_IMIN [MFR 37,Rail #2] 511.50 A"
+WriteWord,0x34,0xF5,0xFFFB71
+ReadWord,0x34,0xF5,0xFFFB
+Comment,"Write THERMAL_COEFF [MFR 13,Rail #2] 0.000 %/C"
+WriteWord,0x34,0xDD,0x0080D2
+ReadWord,0x34,0xDD,0x0080
+Comment,Write TOFF_DELAY [Rail #2] 5.0 ms
+WriteWord,0x34,0x64,0x80CA45
+ReadWord,0x34,0x64,0x80CA
+Comment,Write TOFF_FALL [Rail #2] 7.2 ms
+WriteWord,0x34,0x65,0x99CBC3
+ReadWord,0x34,0x65,0x99CB
+Comment,Write TOFF_MAX_WARN_LIMIT [Rail #2] <No Limit>
+WriteWord,0x34,0x66,0xFF7FF0
+ReadWord,0x34,0x66,0xFF7F
+Comment,Write TON_DELAY [Rail #2] 0.0 ms
+WriteWord,0x34,0x60,0x0080A9
+ReadWord,0x34,0x60,0x0080
+Comment,Write TON_MAX_FAULT_LIMIT [Rail #2] 36.0 ms
+WriteWord,0x34,0x62,0x40E20D
+ReadWord,0x34,0x62,0x40E2
+Comment,"Write TON_MAX_FAULT_RESPONSE [Rail #2] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x63,0x005E
+ReadByte,0x34,0x63,0x00
+Comment,Write TON_RISE [Rail #2] 7.2 ms
+WriteWord,0x34,0x61,0x99CB68
+ReadWord,0x34,0x61,0x99CB
+Comment,"Write TRACKING_MODE [MFR 22,Rail #2] Off"
+WriteByte,0x34,0xE6,0xFF5A
+ReadByte,0x34,0xE6,0xFF
+Comment,"Write TRACKING_SCALE_MONITOR [MFR 23,Rail #2] 1.000 "
+WriteWord,0x34,0xE7,0x00BA12
+ReadWord,0x34,0xE7,0x00BA
+Comment,"Write VOUT_CAL_MONITOR [MFR 01,Rail #2] 0.000 V"
+WriteWord,0x34,0xD1,0x0000A1
+ReadWord,0x34,0xD1,0x0000
+Comment,Write VOUT_CAL_OFFSET [Rail #2] 0.000 V
+WriteWord,0x34,0x23,0x00001B
+ReadWord,0x34,0x23,0x0000
+Comment,Write VOUT_COMMAND [Rail #2] 1.800 V
+WriteWord,0x34,0x21,0xCD1C9D
+ReadWord,0x34,0x21,0xCD1C
+Comment,Write VOUT_MARGIN_HIGH [Rail #2] 1.890 V
+WriteWord,0x34,0x25,0x3D1E2C
+ReadWord,0x34,0x25,0x3D1E
+Comment,Write VOUT_MARGIN_LOW [Rail #2] 1.710 V
+WriteWord,0x34,0x26,0x5C1B6A
+ReadWord,0x34,0x26,0x5C1B
+Comment,Write VOUT_OV_FAULT_LIMIT [Rail #2] 2.070 V
+WriteWord,0x34,0x40,0x1F2110
+ReadWord,0x34,0x40,0x1F21
+Comment,"Write VOUT_OV_FAULT_RESPONSE [Rail #2] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x41,0x8053
+ReadByte,0x34,0x41,0x80
+Comment,Write VOUT_OV_WARN_LIMIT [Rail #2] 1.980 V
+WriteWord,0x34,0x42,0xAE1F26
+ReadWord,0x34,0x42,0xAE1F
+Comment,Write VOUT_SCALE_LOOP [Rail #2] 0.440 
+WriteWord,0x34,0x29,0x85AB33
+ReadWord,0x34,0x29,0x85AB
+Comment,Write VOUT_SCALE_MONITOR [Rail #2] 0.440 
+WriteWord,0x34,0x2A,0x85AB8E
+ReadWord,0x34,0x2A,0x85AB
+Comment,Write VOUT_TRANSITION_RATE [Rail #2] 0.251 mV/us
+WriteWord,0x34,0x27,0x02AAC5
+ReadWord,0x34,0x27,0x02AA
+Comment,Write VOUT_UV_FAULT_LIMIT [Rail #2] 1.530 V
+WriteWord,0x34,0x44,0x7B18B5
+ReadWord,0x34,0x44,0x7B18
+Comment,"Write VOUT_UV_FAULT_RESPONSE [Rail #2] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x45,0x008E
+ReadByte,0x34,0x45,0x00
+Comment,Write VOUT_UV_WARN_LIMIT [Rail #2] 1.620 V
+WriteWord,0x34,0x43,0xEC192E
+ReadWord,0x34,0x43,0xEC19
+Comment,Write IOUT_CAL_GAIN_1 [Rail #2] 200.0 mohm
+WriteWord,0x34,0x38,0x20F32C
+ReadWord,0x34,0x38,0x20F3
+Comment,Write IOUT_CAL_OFFSET_1 [Rail #2] 0.000000 A
+WriteWord,0x34,0x39,0x0080B7
+ReadWord,0x34,0x39,0x0080
+Comment,"Write TEMPERATURE_CAL_GAIN_1 [MFR 20,Rail #2] 100.0 C/V"
+WriteWord,0x34,0xE4,0x20EBB1
+ReadWord,0x34,0xE4,0x20EB
+Comment,"Write TEMPERATURE_CAL_OFFSET_1 [MFR 21,Rail #2] -45.00 C"
+WriteWord,0x34,0xE5,0x30E5A7
+ReadWord,0x34,0xE5,0x30E5
+Comment,Write VOUT_MAX [Rail #3] 3.633 V
+WriteByte,0x34,0x00,0x029A
+ReadByte,0x34,0x00,0x02
+WriteWord,0x34,0x24,0x213A10
+ReadWord,0x34,0x24,0x213A
+Comment,Write ON_OFF_CONFIG [Rail #3] Mode: Always Converting
+WriteByte,0x34,0x02,0x02B0
+ReadByte,0x34,0x02,0x02
+Comment,"Write CLA_GAINS_BANK_0 [META,Rail #3] B1=[1.79102 -3.23828 1.45508] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x007A
+ReadByte,0x34,0xD4,0x00
+BlockWrite,0x34,0xD5,0x180395098602E9000202750F8B000000008410410404033C3BF9
+BlockRead,0x34,0xD5,0x180395098602E9000202750F8B000000008410410404033C3B
+Comment,"Write CLA_GAINS_BANK_1 [META,Rail #3] B1=[1.79102 -3.23828 1.45508] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[2.00,1.75,1.00,1.75,2.00]"
+WriteByte,0x34,0xD4,0x017D
+ReadByte,0x34,0xD4,0x01
+BlockWrite,0x34,0xD5,0x180395098602E9000202750F8B00000000841C81C804033C3B35
+BlockRead,0x34,0xD5,0x180395098602E9000202750F8B00000000841C81C804033C3B
+Comment,"Write CLA_GAINS_BANK_2 [META,Rail #3] B1=[0.00000 0.00000 0.00000] A1=[1.00000 -1.00000 0.00000] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=1 Limits=[-5.00,-3.00,3.00,5.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x0274
+ReadByte,0x34,0xD4,0x02
+BlockWrite,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B33
+BlockRead,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B
+Comment,"Write DRIVER_CONFIG [MFR 06,Rail #3] DPWM Shutdown Action: DriveLow, Fault Pin On Restart Mode: IgnoreFaultPin, Interrupt Pin Polarity: ActiveHigh"
+WriteByte,0x34,0xD6,0x0050
+ReadByte,0x34,0xD6,0x00
+Comment,"Write DRIVER_MIN_PULSE [MFR 15,Rail #3] 20 ns"
+WriteWord,0x34,0xDF,0x80DA33
+ReadWord,0x34,0xDF,0x80DA
+Comment,"Write EADC_SAMPLE_TRIGGER [MFR 07,Rail #3] 228 ns"
+WriteWord,0x34,0xD7,0x90F3EA
+ReadWord,0x34,0xD7,0x90F3
+Comment,"Write FAST_OC_FAULT_LIMIT [MFR 39,Rail #3] 15.000 A/Phase"
+WriteWord,0x34,0xF7,0xC0D345
+ReadWord,0x34,0xF7,0xC0D3
+Comment,Write IOUT_OC_FAULT_LIMIT [Rail #3] 13.000 A
+WriteWord,0x34,0x46,0x40D372
+ReadWord,0x34,0x46,0x40D3
+Comment,"Write IOUT_OC_FAULT_RESPONSE [Rail #3] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x47,0x802D
+ReadByte,0x34,0x47,0x80
+Comment,Write IOUT_OC_LV_FAULT_LIMIT [Rail #3] 2.871 V
+WriteWord,0x34,0x48,0xF02DE5
+ReadWord,0x34,0x48,0xF02D
+Comment,"Write IOUT_OC_LV_FAULT_RESPONSE [Rail #3] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x49,0x80FB
+ReadByte,0x34,0x49,0x80
+Comment,Write IOUT_OC_WARN_LIMIT [Rail #3] 10.500 A
+WriteWord,0x34,0x4A,0xA0D2CC
+ReadWord,0x34,0x4A,0xA0D2
+Comment,Write IOUT_UC_FAULT_LIMIT [Rail #3] -3.281 A
+WriteWord,0x34,0x4B,0xB8C43A
+ReadWord,0x34,0x4B,0xB8C4
+Comment,"Write IOUT_UC_FAULT_RESPONSE [Rail #3] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x4C,0x0033
+ReadByte,0x34,0x4C,0x00
+Comment,"Write LIGHT_LOAD_CONFIG [MFR 29,Rail #3] CLA Gain Control: NormalLoad; Phase Control: NormalLoad; Num Light Load Phases: 1"
+WriteByte,0x34,0xED,0x003E
+ReadByte,0x34,0xED,0x00
+Comment,"Write LIGHT_LOAD_LIMIT_HIGH [MFR 27,Rail #3] 0.000 A"
+WriteWord,0x34,0xEB,0x00804E
+ReadWord,0x34,0xEB,0x0080
+Comment,"Write LIGHT_LOAD_LIMIT_LOW [MFR 38,Rail #3] 0.000 A"
+WriteWord,0x34,0xF6,0x00807D
+ReadWord,0x34,0xF6,0x0080
+Comment,Write OT_FAULT_LIMIT [Rail #3] 80 C
+WriteWord,0x34,0x4F,0x80EA0A
+ReadWord,0x34,0x4F,0x80EA
+Comment,"Write OT_FAULT_RESPONSE [Rail #3] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x50,0x8011
+ReadByte,0x34,0x50,0x80
+Comment,Write OT_WARN_LIMIT [Rail #3] 77 C
+WriteWord,0x34,0x51,0x68EA6F
+ReadWord,0x34,0x51,0x68EA
+Comment,"Write PHASE_DROP_CAL [MFR 42,Rail #3] 1.000 "
+WriteWord,0x34,0xFA,0x00BA21
+ReadWord,0x34,0xFA,0x00BA
+Comment,Write POWER_GOOD_OFF [Rail #3] 2.805 V
+WriteWord,0x34,0x5F,0xE12C14
+ReadWord,0x34,0x5F,0xE12C
+Comment,Write POWER_GOOD_ON [Rail #3] 2.970 V
+WriteWord,0x34,0x5E,0x852FD7
+ReadWord,0x34,0x5E,0x852F
+Comment,"Write SEQ_TIMEOUT [MFR 00,Rail #3] 0.0 ms"
+WriteWord,0x34,0xD0,0x008043
+ReadWord,0x34,0xD0,0x0080
+Comment,"Write TEMP_BALANCE_IMIN [MFR 37,Rail #3] 511.50 A"
+WriteWord,0x34,0xF5,0xFFFB71
+ReadWord,0x34,0xF5,0xFFFB
+Comment,"Write THERMAL_COEFF [MFR 13,Rail #3] 0.000 %/C"
+WriteWord,0x34,0xDD,0x0080D2
+ReadWord,0x34,0xDD,0x0080
+Comment,Write TOFF_DELAY [Rail #3] 5.0 ms
+WriteWord,0x34,0x64,0x80CA45
+ReadWord,0x34,0x64,0x80CA
+Comment,Write TOFF_FALL [Rail #3] 13.2 ms
+WriteWord,0x34,0x65,0x4CD370
+ReadWord,0x34,0x65,0x4CD3
+Comment,Write TOFF_MAX_WARN_LIMIT [Rail #3] <No Limit>
+WriteWord,0x34,0x66,0xFF7FF0
+ReadWord,0x34,0x66,0xFF7F
+Comment,Write TON_DELAY [Rail #3] 0.0 ms
+WriteWord,0x34,0x60,0x0080A9
+ReadWord,0x34,0x60,0x0080
+Comment,Write TON_MAX_FAULT_LIMIT [Rail #3] 66.0 ms
+WriteWord,0x34,0x62,0x10EA39
+ReadWord,0x34,0x62,0x10EA
+Comment,"Write TON_MAX_FAULT_RESPONSE [Rail #3] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x63,0x005E
+ReadByte,0x34,0x63,0x00
+Comment,Write TON_RISE [Rail #3] 13.2 ms
+WriteWord,0x34,0x61,0x4CD3DB
+ReadWord,0x34,0x61,0x4CD3
+Comment,"Write TRACKING_MODE [MFR 22,Rail #3] Off"
+WriteByte,0x34,0xE6,0xFF5A
+ReadByte,0x34,0xE6,0xFF
+Comment,"Write TRACKING_SCALE_MONITOR [MFR 23,Rail #3] 1.000 "
+WriteWord,0x34,0xE7,0x00BA12
+ReadWord,0x34,0xE7,0x00BA
+Comment,"Write VOUT_CAL_MONITOR [MFR 01,Rail #3] 0.000 V"
+WriteWord,0x34,0xD1,0x0000A1
+ReadWord,0x34,0xD1,0x0000
+Comment,Write VOUT_CAL_OFFSET [Rail #3] 0.000 V
+WriteWord,0x34,0x23,0x00001B
+ReadWord,0x34,0x23,0x0000
+Comment,Write VOUT_COMMAND [Rail #3] 3.300 V
+WriteWord,0x34,0x21,0xCD3445
+ReadWord,0x34,0x21,0xCD34
+Comment,Write VOUT_MARGIN_HIGH [Rail #3] 3.465 V
+WriteWord,0x34,0x25,0x713754
+ReadWord,0x34,0x25,0x7137
+Comment,Write VOUT_MARGIN_LOW [Rail #3] 3.135 V
+WriteWord,0x34,0x26,0x293256
+ReadWord,0x34,0x26,0x2932
+Comment,Write VOUT_OV_FAULT_LIMIT [Rail #3] 3.795 V
+WriteWord,0x34,0x40,0xB83C30
+ReadWord,0x34,0x40,0xB83C
+Comment,"Write VOUT_OV_FAULT_RESPONSE [Rail #3] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x41,0x8053
+ReadByte,0x34,0x41,0x80
+Comment,Write VOUT_OV_WARN_LIMIT [Rail #3] 3.630 V
+WriteWord,0x34,0x42,0x143A10
+ReadWord,0x34,0x42,0x143A
+Comment,Write VOUT_SCALE_LOOP [Rail #3] 0.440 
+WriteWord,0x34,0x29,0x85AB33
+ReadWord,0x34,0x29,0x85AB
+Comment,Write VOUT_SCALE_MONITOR [Rail #3] 0.440 
+WriteWord,0x34,0x2A,0x85AB8E
+ReadWord,0x34,0x2A,0x85AB
+Comment,Write VOUT_TRANSITION_RATE [Rail #3] 0.251 mV/us
+WriteWord,0x34,0x27,0x02AAC5
+ReadWord,0x34,0x27,0x02AA
+Comment,Write VOUT_UV_FAULT_LIMIT [Rail #3] 2.805 V
+WriteWord,0x34,0x44,0xE12C5A
+ReadWord,0x34,0x44,0xE12C
+Comment,"Write VOUT_UV_FAULT_RESPONSE [Rail #3] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x45,0x008E
+ReadByte,0x34,0x45,0x00
+Comment,Write VOUT_UV_WARN_LIMIT [Rail #3] 2.970 V
+WriteWord,0x34,0x43,0x852FE4
+ReadWord,0x34,0x43,0x852F
+Comment,Write IOUT_CAL_GAIN_1 [Rail #3] 200.0 mohm
+WriteWord,0x34,0x38,0x20F32C
+ReadWord,0x34,0x38,0x20F3
+Comment,Write IOUT_CAL_OFFSET_1 [Rail #3] 0.000000 A
+WriteWord,0x34,0x39,0x0080B7
+ReadWord,0x34,0x39,0x0080
+Comment,"Write TEMPERATURE_CAL_GAIN_1 [MFR 20,Rail #3] 100.0 C/V"
+WriteWord,0x34,0xE4,0x20EBB1
+ReadWord,0x34,0xE4,0x20EB
+Comment,"Write TEMPERATURE_CAL_OFFSET_1 [MFR 21,Rail #3] -45.00 C"
+WriteWord,0x34,0xE5,0x30E5A7
+ReadWord,0x34,0xE5,0x30E5
+Comment,Write VOUT_MAX [Rail #4] 3.633 V
+WriteByte,0x34,0x00,0x039D
+ReadByte,0x34,0x00,0x03
+WriteWord,0x34,0x24,0x213A10
+ReadWord,0x34,0x24,0x213A
+Comment,Write ON_OFF_CONFIG [Rail #4] Mode: Always Converting
+WriteByte,0x34,0x02,0x02B0
+ReadByte,0x34,0x02,0x02
+Comment,"Write CLA_GAINS_BANK_0 [META,Rail #4] B1=[0.87891 -1.64258 0.76563] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x007A
+ReadByte,0x34,0xD4,0x00
+BlockWrite,0x34,0xD5,0x180384096E0310000104EA0F16000000008410410404033C3B12
+BlockRead,0x34,0xD5,0x180384096E0310000104EA0F16000000008410410404033C3B
+Comment,"Write CLA_GAINS_BANK_1 [META,Rail #4] B1=[0.87891 -1.64258 0.76563] A1=[1.00000 -1.22852 0.22852] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=4 Limits=[-5.00,-4.00,3.00,4.00] Gains=[2.00,1.75,1.00,1.75,2.00]"
+WriteByte,0x34,0xD4,0x017D
+ReadByte,0x34,0xD4,0x01
+BlockWrite,0x34,0xD5,0x180384096E0310000104EA0F1600000000841C81C804033C3BDE
+BlockRead,0x34,0xD5,0x180384096E0310000104EA0F1600000000841C81C804033C3B
+Comment,"Write CLA_GAINS_BANK_2 [META,Rail #4] B1=[0.00000 0.00000 0.00000] A1=[1.00000 -1.00000 0.00000] B2=[1.00000 0.00000] A2=[1.00000 0.00000] AFE_Gain=1 Limits=[-5.00,-3.00,3.00,5.00] Gains=[1.00,1.00,1.00,1.00,1.00]"
+WriteByte,0x34,0xD4,0x0274
+ReadByte,0x34,0xD4,0x02
+BlockWrite,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B33
+BlockRead,0x34,0xD5,0x18000000000000000301000000000000000410410405033D3B
+Comment,"Write DRIVER_CONFIG [MFR 06,Rail #4] DPWM Shutdown Action: DriveLow, Fault Pin On Restart Mode: IgnoreFaultPin, Interrupt Pin Polarity: ActiveHigh"
+WriteByte,0x34,0xD6,0x0050
+ReadByte,0x34,0xD6,0x00
+Comment,"Write DRIVER_MIN_PULSE [MFR 15,Rail #4] 140 ns"
+WriteWord,0x34,0xDF,0x30F2A4
+ReadWord,0x34,0xDF,0x30F2
+Comment,"Write EADC_SAMPLE_TRIGGER [MFR 07,Rail #4] 224 ns"
+WriteWord,0x34,0xD7,0x80F3BD
+ReadWord,0x34,0xD7,0x80F3
+Comment,"Write FAST_OC_FAULT_LIMIT [MFR 39,Rail #4] 8.000 A/Phase"
+WriteWord,0x34,0xF7,0x00D2AF
+ReadWord,0x34,0xF7,0x00D2
+Comment,Write IOUT_OC_FAULT_LIMIT [Rail #4] 8.000 A
+WriteWord,0x34,0x46,0x00D22E
+ReadWord,0x34,0x46,0x00D2
+Comment,"Write IOUT_OC_FAULT_RESPONSE [Rail #4] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x47,0x802D
+ReadByte,0x34,0x47,0x80
+Comment,Write IOUT_OC_LV_FAULT_LIMIT [Rail #4] 1.566 V
+WriteWord,0x34,0x48,0x0E19AB
+ReadWord,0x34,0x48,0x0E19
+Comment,"Write IOUT_OC_LV_FAULT_RESPONSE [Rail #4] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x49,0x80FB
+ReadByte,0x34,0x49,0x80
+Comment,Write IOUT_OC_WARN_LIMIT [Rail #4] 7.500 A
+WriteWord,0x34,0x4A,0xC0CB76
+ReadWord,0x34,0x4A,0xC0CB
+Comment,Write IOUT_UC_FAULT_LIMIT [Rail #4] -3.281 A
+WriteWord,0x34,0x4B,0xB8C43A
+ReadWord,0x34,0x4B,0xB8C4
+Comment,"Write IOUT_UC_FAULT_RESPONSE [Rail #4] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x4C,0x0033
+ReadByte,0x34,0x4C,0x00
+Comment,"Write LIGHT_LOAD_CONFIG [MFR 29,Rail #4] CLA Gain Control: NormalLoad; Phase Control: NormalLoad; Num Light Load Phases: 1"
+WriteByte,0x34,0xED,0x003E
+ReadByte,0x34,0xED,0x00
+Comment,"Write LIGHT_LOAD_LIMIT_HIGH [MFR 27,Rail #4] 0.000 A"
+WriteWord,0x34,0xEB,0x00804E
+ReadWord,0x34,0xEB,0x0080
+Comment,"Write LIGHT_LOAD_LIMIT_LOW [MFR 38,Rail #4] 0.000 A"
+WriteWord,0x34,0xF6,0x00807D
+ReadWord,0x34,0xF6,0x0080
+Comment,Write OT_FAULT_LIMIT [Rail #4] 80 C
+WriteWord,0x34,0x4F,0x80EA0A
+ReadWord,0x34,0x4F,0x80EA
+Comment,"Write OT_FAULT_RESPONSE [Rail #4] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x50,0x8011
+ReadByte,0x34,0x50,0x80
+Comment,Write OT_WARN_LIMIT [Rail #4] 77 C
+WriteWord,0x34,0x51,0x68EA6F
+ReadWord,0x34,0x51,0x68EA
+Comment,"Write PHASE_DROP_CAL [MFR 42,Rail #4] 1.000 "
+WriteWord,0x34,0xFA,0x00BA21
+ReadWord,0x34,0xFA,0x00BA
+Comment,Write POWER_GOOD_OFF [Rail #4] 1.530 V
+WriteWord,0x34,0x5F,0x7B18FB
+ReadWord,0x34,0x5F,0x7B18
+Comment,Write POWER_GOOD_ON [Rail #4] 1.620 V
+WriteWord,0x34,0x5E,0xEC191D
+ReadWord,0x34,0x5E,0xEC19
+Comment,"Write SEQ_TIMEOUT [MFR 00,Rail #4] 0.0 ms"
+WriteWord,0x34,0xD0,0x008043
+ReadWord,0x34,0xD0,0x0080
+Comment,"Write TEMP_BALANCE_IMIN [MFR 37,Rail #4] 511.50 A"
+WriteWord,0x34,0xF5,0xFFFB71
+ReadWord,0x34,0xF5,0xFFFB
+Comment,"Write THERMAL_COEFF [MFR 13,Rail #4] 0.394 %/C"
+WriteWord,0x34,0xDD,0x27ABC6
+ReadWord,0x34,0xDD,0x27AB
+Comment,Write TOFF_DELAY [Rail #4] 0.0 ms
+WriteWord,0x34,0x64,0x008002
+ReadWord,0x34,0x64,0x0080
+Comment,Write TOFF_FALL [Rail #4] 7.2 ms
+WriteWord,0x34,0x65,0x99CBC3
+ReadWord,0x34,0x65,0x99CB
+Comment,Write TOFF_MAX_WARN_LIMIT [Rail #4] <No Limit>
+WriteWord,0x34,0x66,0xFF7FF0
+ReadWord,0x34,0x66,0xFF7F
+Comment,Write TON_DELAY [Rail #4] 0.0 ms
+WriteWord,0x34,0x60,0x0080A9
+ReadWord,0x34,0x60,0x0080
+Comment,Write TON_MAX_FAULT_LIMIT [Rail #4] 36.0 ms
+WriteWord,0x34,0x62,0x40E20D
+ReadWord,0x34,0x62,0x40E2
+Comment,"Write TON_MAX_FAULT_RESPONSE [Rail #4] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x63,0x005E
+ReadByte,0x34,0x63,0x00
+Comment,Write TON_RISE [Rail #4] 7.2 ms
+WriteWord,0x34,0x61,0x99CB68
+ReadWord,0x34,0x61,0x99CB
+Comment,"Write TRACKING_MODE [MFR 22,Rail #4] Off"
+WriteByte,0x34,0xE6,0xFF5A
+ReadByte,0x34,0xE6,0xFF
+Comment,"Write TRACKING_SCALE_MONITOR [MFR 23,Rail #4] 1.000 "
+WriteWord,0x34,0xE7,0x00BA12
+ReadWord,0x34,0xE7,0x00BA
+Comment,"Write VOUT_CAL_MONITOR [MFR 01,Rail #4] 0.000 V"
+WriteWord,0x34,0xD1,0x0000A1
+ReadWord,0x34,0xD1,0x0000
+Comment,Write VOUT_CAL_OFFSET [Rail #4] 0.000 V
+WriteWord,0x34,0x23,0x00001B
+ReadWord,0x34,0x23,0x0000
+Comment,Write VOUT_COMMAND [Rail #4] 1.800 V
+WriteWord,0x34,0x21,0xCD1C9D
+ReadWord,0x34,0x21,0xCD1C
+Comment,Write VOUT_MARGIN_HIGH [Rail #4] 1.890 V
+WriteWord,0x34,0x25,0x3D1E2C
+ReadWord,0x34,0x25,0x3D1E
+Comment,Write VOUT_MARGIN_LOW [Rail #4] 1.710 V
+WriteWord,0x34,0x26,0x5C1B6A
+ReadWord,0x34,0x26,0x5C1B
+Comment,Write VOUT_OV_FAULT_LIMIT [Rail #4] 2.070 V
+WriteWord,0x34,0x40,0x1F2110
+ReadWord,0x34,0x40,0x1F21
+Comment,"Write VOUT_OV_FAULT_RESPONSE [Rail #4] Response=2,Restart=0,Delay=0"
+WriteByte,0x34,0x41,0x8053
+ReadByte,0x34,0x41,0x80
+Comment,Write VOUT_OV_WARN_LIMIT [Rail #4] 1.980 V
+WriteWord,0x34,0x42,0xAE1F26
+ReadWord,0x34,0x42,0xAE1F
+Comment,Write VOUT_SCALE_LOOP [Rail #4] 0.440 
+WriteWord,0x34,0x29,0x85AB33
+ReadWord,0x34,0x29,0x85AB
+Comment,Write VOUT_SCALE_MONITOR [Rail #4] 0.440 
+WriteWord,0x34,0x2A,0x85AB8E
+ReadWord,0x34,0x2A,0x85AB
+Comment,Write VOUT_TRANSITION_RATE [Rail #4] 0.251 mV/us
+WriteWord,0x34,0x27,0x02AAC5
+ReadWord,0x34,0x27,0x02AA
+Comment,Write VOUT_UV_FAULT_LIMIT [Rail #4] 1.530 V
+WriteWord,0x34,0x44,0x7B18B5
+ReadWord,0x34,0x44,0x7B18
+Comment,"Write VOUT_UV_FAULT_RESPONSE [Rail #4] Response=0,Restart=0,Delay=0"
+WriteByte,0x34,0x45,0x008E
+ReadByte,0x34,0x45,0x00
+Comment,Write VOUT_UV_WARN_LIMIT [Rail #4] 1.620 V
+WriteWord,0x34,0x43,0xEC192E
+ReadWord,0x34,0x43,0xEC19
+Comment,Write IOUT_CAL_GAIN_1 [Rail #4] 93.5 mohm
+WriteWord,0x34,0x38,0xECEA72
+ReadWord,0x34,0x38,0xECEA
+Comment,Write IOUT_CAL_OFFSET_1 [Rail #4] -6.437500 A
+WriteWord,0x34,0x39,0xC8CC11
+ReadWord,0x34,0x39,0xC8CC
+Comment,"Write TEMPERATURE_CAL_GAIN_1 [MFR 20,Rail #4] 100.0 C/V"
+WriteWord,0x34,0xE4,0x20EBB1
+ReadWord,0x34,0xE4,0x20EB
+Comment,"Write TEMPERATURE_CAL_OFFSET_1 [MFR 21,Rail #4] -50.00 C"
+WriteWord,0x34,0xE5,0xE0E41A
+ReadWord,0x34,0xE5,0xE0E4
+Comment,Store configuration to data flash
+Comment,Execute STORE_DEFAULT_ALL
+SendByte,0x34,0x11
+Pause,1000,"Pausing 1,000.00 ms for STORE_DEFAULT_ALL hold time"
